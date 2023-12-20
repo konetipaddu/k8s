@@ -1,0 +1,29 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: nginx
+  labels: 
+    app: aws
+spec:
+  minReadySeconds: 3
+  replicas: 5
+  selector: 
+    matchLabels:
+      app: aws
+  strategy:
+    rollingUpdate: 
+      maxSurge: 25%
+      maxUnavailable: 15%
+  template:
+    metadata:
+      name: nginx-deploy
+      labels: 
+        app: aws
+    spec:
+      containers: 
+        - name: niginx-pod
+          image: 1.24-alpine3.17
+          ports:
+            - containerPort: 80
+       

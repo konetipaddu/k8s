@@ -1,0 +1,27 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nop-replicaset
+  labels: 
+    app: web
+spec:
+  minReadySeconds: 2
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      name: nop-pod
+      labels:
+        app: web 
+    spec:
+      containers:
+        - name: nop-container
+          image: paddutester/nop
+          command:
+            - sleep
+            - 10s
+          ports:
+            - containerPort: 5000 

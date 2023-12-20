@@ -1,0 +1,73 @@
+## Restart always:
+always: restartPolicy only refers to restarts of the containers by the kubelet on the same node.
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: always-restart
+spec:
+  restartPolicy: Always
+  containers:
+    - name: always
+      image: jenkins/jenkins
+      ports:
+        - containerPort: 8080
+      command: 
+        - sleep
+        - 10s
+
+
+        ## Restart Onfailure (code failure)
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: onfailure-restart
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: failure
+      image: nginx
+      ports:
+        - containerPort: 80
+      args:
+        - sleep
+        - 1s 
+
+
+        ## Restart Onfailure (code failure)
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: onfailure-restart
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: failure
+      image: nginx
+      ports:
+        - containerPort: 80
+      args:
+        - sleep
+        - 1s 
+
+
+        ## Restart-never
+never: Never means that the container will not be restarted regardless of why it exited.
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: never-restart-pod
+spec:
+  restartPolicy: Never
+  containers:
+    - name: always
+      image: paddutester/spc
+      ports:
+        - containerPort: 8080
+      args:
+        - sleep
+        - 10s

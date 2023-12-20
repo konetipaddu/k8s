@@ -1,0 +1,26 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: job
+  labels:
+    app: web
+spec:
+  template:
+    metadata:
+      labels:
+        dev: spc
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: spc-job
+          image: paddutester/spring-petclinic
+          args:
+            - sleep
+              10s
+          ports:
+            - containerPort: 8080
+
+    
+
+   
