@@ -36,22 +36,23 @@ spec:
         - 1s 
 
 
-        ## Restart Onfailure (code failure)
+## Restart Onfailure (code succes
 ---
 apiVersion: v1
 kind: Pod
 metadata:
-  name: onfailure-restart
+  name: onfailure-restart-pod
 spec:
   restartPolicy: OnFailure
-  containers:
-    - name: failure
-      image: nginx
+  containers: 
+    - name: success
+      image: paddutester/nop:nop-10
+
       ports:
-        - containerPort: 80
+        - containerPort: 8080
       args:
         - sleep
-        - 1s 
+        - 10s
 
 
         ## Restart-never
