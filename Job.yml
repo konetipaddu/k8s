@@ -17,7 +17,7 @@ spec:
           image: paddutester/spring-petclinic:spc-1.0
           args:
             - sleep
-              10s
+            - 10m
           ports:
             - containerPort: 8080
 
