@@ -4,10 +4,10 @@ kind: ReplicaSet
 metadata:
   name: nop-replicaset
   labels: 
-    app: web
+    qt: env
 spec:
   minReadySeconds: 2
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: web
@@ -19,9 +19,6 @@ spec:
     spec:
       containers:
         - name: nop-container
-          image: paddutester/nop
-          command:
-            - sleep
-            - 10s
+          image: paddutester/nop:nop-10
           ports:
             - containerPort: 5000 
