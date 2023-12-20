@@ -14,7 +14,7 @@ spec:
       restartPolicy: Never
       containers:
         - name: spc-job
-          image: paddutester/spring-petclinic
+          image: paddutester:spring-petclinic
           args:
             - sleep
               10s
