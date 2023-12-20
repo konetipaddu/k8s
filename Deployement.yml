@@ -23,7 +23,7 @@ spec:
     spec:
       containers: 
         - name: niginx-pod
-          image: nginx:1.24-alpine3.17
+          image: nginx
           ports:
             - containerPort: 80
        
