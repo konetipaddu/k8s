@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name: mysql-pod
-          image: mysql:8.0-debian
+          image: mysql
           ports:
             - name: mysqls
               containerPort: 3306
