@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
-  name: DaemonSet-pod
+  name: daemonSet-pod
   labels:
     app: aws
 spec:
@@ -12,12 +12,12 @@ spec:
       dev: env
   template:
     metadata:
-      name: DaemonSet-node
+      name: daemonSet-node
       labels:
         dev: env
     spec:
       containers:
-        - name: DaemonSet-jenkins
+        - name: daemonSet-jenkins
           image: jenkins/jenkins
           ports:
             - containerPort: 8080
