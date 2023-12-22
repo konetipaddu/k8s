@@ -4,7 +4,7 @@ kind: Deployment
 metadata: 
   name: nginx
   labels: 
-    app: aws
+    dev: env
 spec:
   minReadySeconds: 3
   replicas: 5
@@ -27,3 +27,17 @@ spec:
           ports:
             - containerPort: 80
        
+##### sirvice file #####
+
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alpine
+spec:
+  selector:
+    app: aws
+  type: LoadBalancer
+  ports:
+    - port: 80
