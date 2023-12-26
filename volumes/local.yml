@@ -9,4 +9,4 @@ spec:
     - name: jenkins-pod
       image: jenkins/jenkins
       command: ["bash"]
-      args: ["-c", "echo this is devops > /opt/index.txt && sleep 10m"]
+      args: ["-c", "echo this is devops > /tmp/index.txt && sleep 10m"]
