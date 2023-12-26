@@ -10,9 +10,10 @@ spec:
       image: jenkins/jenkins
       command: ["bash"]
       args: ["-c", "echo this is devops > /tmp/index.txt && sleep 10m"]
-  volumes:
-    - name: empty
-      emptyDir: {}
       volumeMounts:
         - name: empty
           mountPath: /tmp
+  volumes:
+    - name: empty
+      emptyDir: {}
+      
