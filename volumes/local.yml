@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jenkins
+  lables:
+    app: web
+spec:
+  containers:
+    - name: jenkins-pod
+      image: jenkins/jenkins
+      command: ["bash"]
+      args: ["-c", "echo this is devops > /opt/content.txt && sleep 10m"]
