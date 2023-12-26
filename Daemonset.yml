@@ -21,4 +21,8 @@ spec:
           image: jenkins/jenkins
           ports:
             - containerPort: 8080
+  updateStrategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 20%           
           
