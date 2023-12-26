@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: jenkins
-  lables:
+  labels:
     app: web
 spec:
   containers:
