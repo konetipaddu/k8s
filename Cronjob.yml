@@ -4,7 +4,7 @@ kind: CronJob
 metadata: 
   name: nginx
 spec:
-  schedule: '* * * * *'
+  schedule: '* * * * 2'
   jobTemplate:
     metadata:
       name: nginxjob
