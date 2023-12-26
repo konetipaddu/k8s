@@ -28,7 +28,18 @@ spec:
             - name: mysqls
               containerPort: 3306
               protocol: TCP      
+          env: 
+            - name: MYSQL_ROOT_PASSWORD
+              value: rootroot
+            - name: MYSQL_DATABASE
+              value: mysqldb
+            - name: MYSQL_USER
+              value: 
+            - name: MYSQL_PASSWORD
+              value: rootroot
 
+              
+                
 
 
 
